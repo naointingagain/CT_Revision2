@@ -14,6 +14,10 @@
 		BF984FF42394EA45004F8D68 /* CTRevision2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF984FF22394EA45004F8D68 /* CTRevision2.xcdatamodeld */; };
 		BF984FF62394EA47004F8D68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF984FF52394EA47004F8D68 /* Assets.xcassets */; };
 		BF984FF92394EA47004F8D68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF984FF72394EA47004F8D68 /* LaunchScreen.storyboard */; };
+		BF9850012394EC74004F8D68 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9850002394EC74004F8D68 /* Recipe.swift */; };
+		BF9850032394ECD5004F8D68 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9850022394ECD5004F8D68 /* Ingredient.swift */; };
+		BF9850052394ED32004F8D68 /* RecipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9850042394ED32004F8D68 /* RecipeController.swift */; };
+		BF9850072394EEC5004F8D68 /* RecipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9850062394EEC5004F8D68 /* RecipeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		BF984FF52394EA47004F8D68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF984FF82394EA47004F8D68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF984FFA2394EA47004F8D68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF9850002394EC74004F8D68 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		BF9850022394ECD5004F8D68 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		BF9850042394ED32004F8D68 /* RecipeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeController.swift; sourceTree = "<group>"; };
+		BF9850062394EEC5004F8D68 /* RecipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +74,10 @@
 				BF984FF72394EA47004F8D68 /* LaunchScreen.storyboard */,
 				BF984FFA2394EA47004F8D68 /* Info.plist */,
 				BF984FF22394EA45004F8D68 /* CTRevision2.xcdatamodeld */,
+				BF9850002394EC74004F8D68 /* Recipe.swift */,
+				BF9850022394ECD5004F8D68 /* Ingredient.swift */,
+				BF9850042394ED32004F8D68 /* RecipeController.swift */,
+				BF9850062394EEC5004F8D68 /* RecipeTableViewController.swift */,
 			);
 			path = CTRevision2;
 			sourceTree = "<group>";
@@ -142,9 +154,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF984FF42394EA45004F8D68 /* CTRevision2.xcdatamodeld in Sources */,
+				BF9850072394EEC5004F8D68 /* RecipeTableViewController.swift in Sources */,
 				BF984FEE2394EA45004F8D68 /* ViewController.swift in Sources */,
+				BF9850052394ED32004F8D68 /* RecipeController.swift in Sources */,
+				BF9850032394ECD5004F8D68 /* Ingredient.swift in Sources */,
 				BF984FEA2394EA45004F8D68 /* AppDelegate.swift in Sources */,
 				BF984FEC2394EA45004F8D68 /* SceneDelegate.swift in Sources */,
+				BF9850012394EC74004F8D68 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
