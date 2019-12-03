@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 import UIKit
 
-class RecipeController{
+class RecipeController{ //Refer to telegramme
     
     func AddRecipe(recipe:Recipe){
         
@@ -37,6 +37,8 @@ class RecipeController{
                 
         //FETCH REQUEST
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDRecipe")
+        
+        
         fetchRequest.predicate = NSPredicate(format: "name = %@", recipe.name!)
         
         do{
@@ -54,7 +56,7 @@ class RecipeController{
         var recipe:[Recipe] = []
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                      let context = appDelegate.persistentContainer.viewContext
+        let context = appDelegate.persistentContainer.viewContext
                       
                        
                //FETCH REQUEST
@@ -68,8 +70,6 @@ class RecipeController{
                } catch {
                    print(error)
                }
-                      
-                      appDelegate.saveContext()
         
         return recipe
     }
@@ -78,6 +78,23 @@ class RecipeController{
         
         var ingredient:[Ingredient] = []
         
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+                      
+                       
+               //FETCH REQUEST
+               let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDIngredient")
+        fetchRequest.predicate = NSPredicate(format: "ANY recipes.name = %@", recipe.name!)
+               
+        
+        do{
+                          let cdIngredient = try context.fetch(fetchRequest) as! [CDIngredient]
+                       for ing in cdIngredient{
+                        ingredient.append(Ingredient(name: ing.name!))
+                       }
+                      } catch {
+                          print(error)
+                      }
         return ingredient
     }
     
