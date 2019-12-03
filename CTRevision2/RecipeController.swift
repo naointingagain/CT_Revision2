@@ -33,7 +33,7 @@ class RecipeController{ //Refer to telegramme
                
                let entity = NSEntityDescription.entity(forEntityName: "CDIngredient", in: context)!
                let cdIngredient = NSManagedObject(entity: entity, insertInto: context) as! CDIngredient
-
+ cdIngredient.name = ingredient.name
                 
         //FETCH REQUEST
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDRecipe")

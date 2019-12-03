@@ -47,10 +47,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="ty0-EM-S0g"/>
                     <connections>
-                        <outlet property="btnAdd" destination="8bC-Xf-vdC" id="dmZ-hP-miw"/>
                         <outlet property="txtIngredient1" destination="UGQ-M9-Ias" id="6Zc-03-zMV"/>
                         <outlet property="txtPreparationTIme" destination="4mA-Ef-bDI" id="A7R-sD-yV4"/>
-                        <outlet property="txtPreparationTime" destination="8bC-Xf-vdC" id="WRs-av-PZN"/>
                         <outlet property="txtRecipe" destination="tck-Q1-wxI" id="ikE-ec-A3a"/>
                     </connections>
                 </viewController>
