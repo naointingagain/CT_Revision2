@@ -43,7 +43,8 @@ class RecipeTableViewController:UITableViewController{
          let recipeController:RecipeController = RecipeController()
         
         ingredient = recipeController.RetrieveIngredientfromRecipe(recipe : recipe[indexPath.row])
-        cell.textLabel?.text = recipe[indexPath.row].name
+        
+        cell.textLabel?.text = "\(recipe[indexPath.row].name!) (\(recipe[indexPath.row].preparationTime!)mins)"
         
         var s = ""
         

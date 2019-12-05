@@ -29,11 +29,11 @@ class RecipeController{ //Refer to telegramme
     
     func AddIngredientToRecipe(recipe:Recipe, ingredient:Ingredient){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-               let context = appDelegate.persistentContainer.viewContext
+        let context = appDelegate.persistentContainer.viewContext
                
-               let entity = NSEntityDescription.entity(forEntityName: "CDIngredient", in: context)!
-               let cdIngredient = NSManagedObject(entity: entity, insertInto: context) as! CDIngredient
- cdIngredient.name = ingredient.name
+        let entity = NSEntityDescription.entity(forEntityName: "CDIngredient", in: context)!
+        let cdIngredient = NSManagedObject(entity: entity, insertInto: context) as! CDIngredient
+        cdIngredient.name = ingredient.name
                 
         //FETCH REQUEST
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDRecipe")
@@ -59,17 +59,17 @@ class RecipeController{ //Refer to telegramme
         let context = appDelegate.persistentContainer.viewContext
                       
                        
-               //FETCH REQUEST
-               let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDRecipe")
+        //FETCH REQUEST
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDRecipe")
                
-               do{
-                   let cdRecipe = try context.fetch(fetchRequest) as! [CDRecipe]
-                for r in cdRecipe{
-                    recipe.append(Recipe(name: r.name!, preparationTime: r.preparationTime))
-                }
-               } catch {
-                   print(error)
-               }
+        do{
+            let cdRecipe = try context.fetch(fetchRequest) as! [CDRecipe]
+        for r in cdRecipe{
+            recipe.append(Recipe(name: r.name!, preparationTime: r.preparationTime))
+            }
+        } catch {
+            print(error)
+        }
         
         return recipe
     }
@@ -82,19 +82,19 @@ class RecipeController{ //Refer to telegramme
         let context = appDelegate.persistentContainer.viewContext
                       
                        
-               //FETCH REQUEST
-               let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDIngredient")
+        //FETCH REQUEST
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDIngredient")
         fetchRequest.predicate = NSPredicate(format: "ANY recipes.name = %@", recipe.name!)
                
         
         do{
-                          let cdIngredient = try context.fetch(fetchRequest) as! [CDIngredient]
-                       for ing in cdIngredient{
-                        ingredient.append(Ingredient(name: ing.name!))
-                       }
-                      } catch {
-                          print(error)
-                      }
+            let cdIngredient = try context.fetch(fetchRequest) as! [CDIngredient]
+            for ing in cdIngredient{
+                ingredient.append(Ingredient(name: ing.name!))
+            }
+        } catch {
+            print(error)
+        }
         return ingredient
     }
     
