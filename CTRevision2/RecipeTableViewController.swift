@@ -27,7 +27,7 @@ class RecipeTableViewController:UITableViewController{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        //Retrieve recipes and ingredients from core data
+        //Retrieve recipes and ingredients from core datas
         let recipeController:RecipeController = RecipeController()
          recipe = recipeController.RetrieveRecipe()
         tableView.reloadData()
@@ -40,16 +40,16 @@ class RecipeTableViewController:UITableViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-         let recipeController:RecipeController = RecipeController()
+        //let recipeController:RecipeController = RecipeController()
         
-        ingredient = recipeController.RetrieveIngredientfromRecipe(recipe : recipe[indexPath.row])
+        ingredient = RecipeController().RetrieveIngredientfromRecipe(recipe : recipe[indexPath.row])
         
         cell.textLabel?.text = "\(recipe[indexPath.row].name!) (\(recipe[indexPath.row].preparationTime!)mins)"
         
-        var s = ""
+        var s = "Ingredients: "
         
         for ing in ingredient{
-            s += ing.name! + ","
+            s += "[\(ing.name!)]"
         }
         cell.detailTextLabel!.text = s
         
