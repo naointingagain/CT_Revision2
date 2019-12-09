@@ -56,4 +56,8 @@ class RecipeTableViewController:UITableViewController{
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           AppDelegate.temp = Int(indexPath.row) //to let the app know which row is being selected
+       }
+    
 }

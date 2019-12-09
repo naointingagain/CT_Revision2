@@ -98,5 +98,30 @@ class RecipeController{ //Refer to telegramme
         return ingredient
     }
     
-    
+    func updateRecipe(name:String, newRecipe:Recipe) //use old number to find the specific row that you want to update
+    {
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        
+        let context = appDelegate.persistentContainer.viewContext
+        
+        //fetch from entity
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDRecipe")
+        fetchRequest.predicate = NSPredicate(format: "name = %@", name)
+        do {
+            let test = try context.fetch(fetchRequest)
+            
+            let objectUpdate = test[0] //get the specific contact
+            
+            //update object value in cell list
+            objectUpdate.setValue(newRecipe.name, forKey: "name")
+            objectUpdate.setValue(newRecipe.preparationTime, forKey: "preparationTime")
+            do {
+                try context.save()
+            } catch  {
+                print(error)
+            }
+        } catch  {
+            print(error)
+        }
+    }
 }
