@@ -41,7 +41,7 @@ class ViewController: UIViewController {
             self.present(alert,animated: true)
         }
         else{
-            let recipe:Recipe = Recipe(name: txtRecipe.text!, preparationTime: Int16(txtPreparationTIme.text!)!)
+            let recipe:Recipe = Recipe(name: txtRecipe.text!, preparationTime: Int16(txtPreparationTIme.text!)!) //add recipe
             
             if txtIngredient1.text == "" && txtIngredient2.text == "" && txtIngredient3.text == "" && txtIngredient4.text == "" && txtIngredient5.text == ""{
                 
@@ -55,6 +55,8 @@ class ViewController: UIViewController {
             else{
                 recipeController.AddRecipe(recipe : recipe)
 
+                
+                //add ingredient to recipe
                 if txtIngredient1.text != ""{
                     let ingredient1:Ingredient = Ingredient(name:txtIngredient1.text!)
                     
@@ -84,6 +86,7 @@ class ViewController: UIViewController {
                     
                     recipeController.AddIngredientToRecipe(recipe : recipe, ingredient: ingredient5)
                 }
+                //setting text to empty
                 txtRecipe.text = ""
                 txtPreparationTIme.text = ""
                 txtIngredient1.text = ""

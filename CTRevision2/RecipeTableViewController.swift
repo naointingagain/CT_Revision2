@@ -44,8 +44,10 @@ class RecipeTableViewController:UITableViewController{
         
         ingredient = RecipeController().RetrieveIngredientfromRecipe(recipe : recipe[indexPath.row])
         
+        //display recipe in cell
         cell.textLabel?.text = "\(recipe[indexPath.row].name!) (\(recipe[indexPath.row].preparationTime!)mins)"
         
+        //display ingredients below
         var s = "Ingredients: "
         
         for ing in ingredient{
@@ -56,6 +58,7 @@ class RecipeTableViewController:UITableViewController{
         return cell
     }
     
+    //for update selection
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
            AppDelegate.temp = Int(indexPath.row) //to let the app know which row is being selected
        }

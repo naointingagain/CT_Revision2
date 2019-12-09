@@ -70,7 +70,6 @@
 			children = (
 				BF984FE92394EA45004F8D68 /* AppDelegate.swift */,
 				BF984FEB2394EA45004F8D68 /* SceneDelegate.swift */,
-				BF984FED2394EA45004F8D68 /* ViewController.swift */,
 				BF984FF52394EA47004F8D68 /* Assets.xcassets */,
 				BF984FF72394EA47004F8D68 /* LaunchScreen.storyboard */,
 				BF984FFA2394EA47004F8D68 /* Info.plist */,
@@ -78,6 +77,7 @@
 				BF9850002394EC74004F8D68 /* Recipe.swift */,
 				BF984FEF2394EA45004F8D68 /* Main.storyboard */,
 				BF9850022394ECD5004F8D68 /* Ingredient.swift */,
+				BF984FED2394EA45004F8D68 /* ViewController.swift */,
 				BF9850042394ED32004F8D68 /* RecipeController.swift */,
 				BF9850062394EEC5004F8D68 /* RecipeTableViewController.swift */,
 				0E826D22239DF196008E684B /* EditRecipeViewController.swift */,

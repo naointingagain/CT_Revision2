@@ -33,17 +33,17 @@ class RecipeController{ //Refer to telegramme
                
         let entity = NSEntityDescription.entity(forEntityName: "CDIngredient", in: context)!
         let cdIngredient = NSManagedObject(entity: entity, insertInto: context) as! CDIngredient
+        
         cdIngredient.name = ingredient.name
                 
         //FETCH REQUEST
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDRecipe")
         
-        
         fetchRequest.predicate = NSPredicate(format: "name = %@", recipe.name!)
         
         do{
             let cdRecipe = try context.fetch(fetchRequest)
-            let temp = cdRecipe[0] as! CDRecipe
+            let temp = cdRecipe[0] as! CDRecipe //selected recipe
             cdIngredient.addToRecipes(temp)
         } catch {
             print(error)
@@ -65,7 +65,7 @@ class RecipeController{ //Refer to telegramme
         do{
             let cdRecipe = try context.fetch(fetchRequest) as! [CDRecipe]
         for r in cdRecipe{
-            recipe.append(Recipe(name: r.name!, preparationTime: r.preparationTime))
+            recipe.append(Recipe(name: r.name!, preparationTime: r.preparationTime)) //retrieve details of recipe
             }
         } catch {
             print(error)
@@ -88,8 +88,10 @@ class RecipeController{ //Refer to telegramme
                
         
         do{
+            //retrieve ingredient from recipe
             let cdIngredient = try context.fetch(fetchRequest) as! [CDIngredient]
             for ing in cdIngredient{
+                //add ing to recipe's ing list
                 ingredient.append(Ingredient(name: ing.name!))
             }
         } catch {
@@ -110,7 +112,7 @@ class RecipeController{ //Refer to telegramme
         do {
             let test = try context.fetch(fetchRequest)
             
-            let objectUpdate = test[0] //get the specific contact
+            let objectUpdate = test[0] //get the specific recipe
             
             //update object value in cell list
             objectUpdate.setValue(newRecipe.name, forKey: "name")
