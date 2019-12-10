@@ -36,7 +36,7 @@ class RecipeController{ //Refer to telegramme
         
         cdIngredient.name = ingredient.name
                 
-        //FETCH REQUEST
+        //fetch recipes name
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDRecipe")
         
         fetchRequest.predicate = NSPredicate(format: "name = %@", recipe.name!)
@@ -44,7 +44,7 @@ class RecipeController{ //Refer to telegramme
         do{
             let cdRecipe = try context.fetch(fetchRequest)
             let temp = cdRecipe[0] as! CDRecipe //selected recipe
-            cdIngredient.addToRecipes(temp)
+            cdIngredient.addToRecipes(temp) //add ingredient to recipe
         } catch {
             print(error)
         }
@@ -65,6 +65,7 @@ class RecipeController{ //Refer to telegramme
         do{
             let cdRecipe = try context.fetch(fetchRequest) as! [CDRecipe]
         for r in cdRecipe{
+            //adding recipe to recipe list
             recipe.append(Recipe(name: r.name!, preparationTime: r.preparationTime)) //retrieve details of recipe
             }
         } catch {

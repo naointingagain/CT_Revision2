@@ -42,6 +42,7 @@ class RecipeTableViewController:UITableViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         //let recipeController:RecipeController = RecipeController()
         
+        //add ingredients to recipe
         ingredient = RecipeController().RetrieveIngredientfromRecipe(recipe : recipe[indexPath.row])
         
         //display recipe in cell

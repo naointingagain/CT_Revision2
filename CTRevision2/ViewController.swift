@@ -33,6 +33,7 @@ class ViewController: UIViewController {
     @IBAction func btnAdd(_ sender: Any) {
         let recipeController:RecipeController = RecipeController()
         
+        //if these two values are blank
         if txtRecipe.text == "" || txtPreparationTIme.text == ""{
             let alert = UIAlertController(title: "Empty Field", message: "Please populate both recipe title and preparation time.", preferredStyle: .alert)
             
@@ -41,7 +42,7 @@ class ViewController: UIViewController {
             self.present(alert,animated: true)
         }
         else{
-            let recipe:Recipe = Recipe(name: txtRecipe.text!, preparationTime: Int16(txtPreparationTIme.text!)!) //add recipe
+            let recipe:Recipe = Recipe(name: txtRecipe.text!, preparationTime: Int16(txtPreparationTIme.text!)!) //create recipe
             
             if txtIngredient1.text == "" && txtIngredient2.text == "" && txtIngredient3.text == "" && txtIngredient4.text == "" && txtIngredient5.text == ""{
                 
@@ -53,7 +54,7 @@ class ViewController: UIViewController {
                 
             }
             else{
-                recipeController.AddRecipe(recipe : recipe)
+                recipeController.AddRecipe(recipe : recipe) //add recipe method
 
                 
                 //add ingredient to recipe
